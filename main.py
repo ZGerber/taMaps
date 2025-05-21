@@ -87,7 +87,7 @@ df = pd.DataFrame(records)
 
 # Create Folium map
 # map = folium.Map(location=telescope_array_coords, zoom_start=12, tiles="OpenTopoMap")
-map = folium.Map(location=telescope_array_coords, zoom_start=12, tiles=None)
+map = folium.Map(location=telescope_array_coords, zoom_start=11, tiles=None)
 folium.TileLayer(
     tiles="https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png",
     attr="Map data: &copy; <a href='https://opentopomap.org'>OpenTopoMap</a> contributors",
