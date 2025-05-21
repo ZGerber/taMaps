@@ -1,0 +1,244 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1" xmlns:geotracker="http://ilyabogdanovich.com/gpx/extensions/geotracker" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd" version="1.1" creator="Recorded in Geo Tracker for Android from Ilya Bogdanovich">
+  <metadata>
+    <name>Current location</name>
+    <desc>Speed: 0 mph
+Elevation: 4529 ft
+Accuracy: 12 ft</desc>
+    <time>2025-05-20T18:55:18Z</time>
+  </metadata>
+  <wpt lat="39.26112088" lon="-112.90556648">
+    <ele>1380.51</ele>
+    <time>2025-05-20T18:55:18Z</time>
+    <name>Current location</name>
+    <desc>Speed: 0 mph
+Elevation: 4529 ft
+Accuracy: 12 ft</desc>
+    <extensions>
+      <geotracker:meta visited="1" />
+    </extensions>
+  </wpt>
+  <wpt lat="39.27381911" lon="-112.90557832">
+    <ele>1372.08</ele>
+    <time>2025-05-20T18:59:32Z</time>
+    <name>Current location</name>
+    <desc>Speed: 0 mph
+Elevation: 4502 ft
+Accuracy: 12 ft</desc>
+    <extensions>
+      <geotracker:meta visited="1" />
+    </extensions>
+  </wpt>
+  <wpt lat="39.3015445" lon="-112.90583549">
+    <ele>1365.86</ele>
+    <time>2025-05-20T19:05:57Z</time>
+    <name>Current location</name>
+    <desc>Speed: 0 mph
+Elevation: 4481 ft
+Accuracy: 16 ft</desc>
+    <extensions>
+      <geotracker:meta visited="1" />
+    </extensions>
+  </wpt>
+  <wpt lat="39.31658357" lon="-112.9239196">
+    <ele>1373.32</ele>
+    <time>2025-05-20T19:10:46Z</time>
+    <name>Current location</name>
+    <desc>Speed: 0 mph
+Elevation: 4506 ft
+Accuracy: 12 ft</desc>
+    <extensions>
+      <geotracker:meta visited="1" />
+    </extensions>
+  </wpt>
+  <wpt lat="39.30299227" lon="-113.01851588">
+    <ele>1385.08</ele>
+    <time>2025-05-20T19:19:54Z</time>
+    <name>Current location</name>
+    <desc>Speed: 0 mph
+Elevation: 4544 ft
+Accuracy: 19 ft</desc>
+    <extensions>
+      <geotracker:meta visited="1" />
+    </extensions>
+  </wpt>
+  <wpt lat="39.3166415" lon="-112.89980385">
+    <ele>1372.38</ele>
+    <time>2025-05-20T19:45:20Z</time>
+    <name>Current location</name>
+    <desc>Speed: 0 mph
+Elevation: 4503 ft
+Accuracy: 12 ft</desc>
+    <extensions>
+      <geotracker:meta visited="1" />
+    </extensions>
+  </wpt>
+  <wpt lat="39.31642518" lon="-112.86382831">
+    <ele>1371.82</ele>
+    <time>2025-05-20T19:48:07Z</time>
+    <name>Current location</name>
+    <desc>Speed: 0 mph
+Elevation: 4501 ft
+Accuracy: 12 ft</desc>
+    <extensions>
+      <geotracker:meta visited="1" />
+    </extensions>
+  </wpt>
+  <wpt lat="39.31636552" lon="-112.82424586">
+    <ele>1372.55</ele>
+    <time>2025-05-20T19:51:37Z</time>
+    <name>Current location</name>
+    <desc>Speed: 0 mph
+Elevation: 4503 ft
+Accuracy: 12 ft</desc>
+    <extensions>
+      <geotracker:meta visited="1" />
+    </extensions>
+  </wpt>
+  <wpt lat="39.31623302" lon="-112.79823523">
+    <ele>1371.13</ele>
+    <time>2025-05-20T19:55:10Z</time>
+    <name>Current location</name>
+    <desc>Speed: 0 mph
+Elevation: 4498 ft
+Accuracy: 12 ft</desc>
+    <extensions>
+      <geotracker:meta visited="1" />
+    </extensions>
+  </wpt>
+  <wpt lat="39.22360071" lon="-112.90565485">
+    <ele>1372.98</ele>
+    <time>2025-05-20T20:08:36Z</time>
+    <name>Current location</name>
+    <desc>Speed: 12.86 mph
+Course: 211°
+Elevation: 4505 ft
+Accuracy: 41 ft</desc>
+    <extensions>
+      <geotracker:meta visited="1" />
+    </extensions>
+  </wpt>
+  <wpt lat="39.19562203" lon="-112.89750816">
+    <ele>1366.12</ele>
+    <time>2025-05-20T20:17:34Z</time>
+    <name>Current location</name>
+    <desc>Speed: 2.73 mph
+Course: 166°
+Elevation: 4482 ft
+Accuracy: 12 ft</desc>
+    <extensions>
+      <geotracker:meta visited="1" />
+    </extensions>
+  </wpt>
+  <wpt lat="39.22629644" lon="-112.88614844">
+    <ele>1363.74</ele>
+    <time>2025-05-20T20:37:59Z</time>
+    <name>Current location</name>
+    <desc>Speed: 0 mph
+Elevation: 4474 ft
+Accuracy: 12 ft</desc>
+    <extensions>
+      <geotracker:meta visited="1" />
+    </extensions>
+  </wpt>
+  <wpt lat="39.23275141" lon="-112.86911522">
+    <ele>1369.21</ele>
+    <time>2025-05-20T20:41:59Z</time>
+    <name>Current location</name>
+    <desc>Speed: 0 mph
+Elevation: 4492 ft
+Accuracy: 12 ft</desc>
+    <extensions>
+      <geotracker:meta visited="1" />
+    </extensions>
+  </wpt>
+  <wpt lat="39.17036599" lon="-113.02707702">
+    <ele>1407.85</ele>
+    <time>2025-05-20T21:10:49Z</time>
+    <name>Current location</name>
+    <desc>Speed: 0 mph
+Elevation: 4619 ft
+Accuracy: 12 ft</desc>
+    <extensions>
+      <geotracker:meta visited="1" />
+    </extensions>
+  </wpt>
+  <wpt lat="39.14501184" lon="-112.96067426">
+    <ele>1367.57</ele>
+    <time>2025-05-20T21:18:38Z</time>
+    <name>Current location</name>
+    <desc>Speed: 0 mph
+Elevation: 4487 ft
+Accuracy: 12 ft</desc>
+    <extensions>
+      <geotracker:meta visited="1" />
+    </extensions>
+  </wpt>
+  <wpt lat="39.12844368" lon="-112.83981255">
+    <ele>1372.21</ele>
+    <time>2025-05-20T21:34:31Z</time>
+    <name>Current location</name>
+    <desc>Speed: 0 mph
+Elevation: 4502 ft
+Accuracy: 12 ft</desc>
+    <extensions>
+      <geotracker:meta visited="1" />
+    </extensions>
+  </wpt>
+  <wpt lat="39.12395061" lon="-112.80973081">
+    <ele>1373.56</ele>
+    <time>2025-05-20T21:39:26Z</time>
+    <name>Current location</name>
+    <desc>Speed: 0 mph
+Elevation: 4506 ft
+Accuracy: 12 ft</desc>
+    <extensions>
+      <geotracker:meta visited="1" />
+    </extensions>
+  </wpt>
+  <wpt lat="39.1945767" lon="-112.9924252">
+    <ele>1391.19</ele>
+    <time>2025-05-20T22:08:24Z</time>
+    <name>Current location</name>
+    <desc>Speed: 1.07 mph
+Course: 52°
+Elevation: 4564 ft
+Accuracy: 12 ft</desc>
+    <extensions>
+      <geotracker:meta visited="1" />
+    </extensions>
+  </wpt>
+  <wpt lat="39.25865794" lon="-112.88306616">
+    <ele>1367.82</ele>
+    <time>2025-05-20T22:22:39Z</time>
+    <name>Current location</name>
+    <desc>Speed: 0 mph
+Elevation: 4488 ft
+Accuracy: 12 ft</desc>
+    <extensions>
+      <geotracker:meta visited="1" />
+    </extensions>
+  </wpt>
+  <wpt lat="39.29278536" lon="-112.82400676">
+    <ele>1372.8</ele>
+    <time>2025-05-20T22:27:00Z</time>
+    <name>Current location</name>
+    <desc>Speed: 0 mph
+Elevation: 4504 ft
+Accuracy: 13 ft</desc>
+    <extensions>
+      <geotracker:meta visited="1" />
+    </extensions>
+  </wpt>
+  <wpt lat="39.29273893" lon="-112.77318383">
+    <ele>1370.49</ele>
+    <time>2025-05-20T22:32:25Z</time>
+    <name>Current location</name>
+    <desc>Speed: 0 mph
+Elevation: 4496 ft
+Accuracy: 12 ft</desc>
+    <extensions>
+      <geotracker:meta visited="1" />
+    </extensions>
+  </wpt>
+</gpx>

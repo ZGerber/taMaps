@@ -3,7 +3,7 @@ import gpxpy
 import re
 import json
 
-telescope_array_coords = [39.38, -112.8]
+telescope_array_coords = [39.32, -112.8]
 towers = {"SNCT": [39.442911, -112.844229], "SKCT": [39.422425, -112.852434], 'LRCT': [39.226160, -113.072571],}
 
 with open("utils/TA_AllSites_20221114.gpx", "r") as f:
@@ -25,7 +25,7 @@ with open("utils/TA_AllSites_20221114.gpx", "r") as f:
 #         for k, v in wp.extensions.items():
 #             print(f"    {k}: {v}")
 
-map = folium.Map(location=telescope_array_coords, zoom_start=7.9, tiles=None)
+map = folium.Map(location=telescope_array_coords, zoom_start=9.9, tiles=None)
 
 tasd = re.compile(r'^(SK|BR|LR)\d{4}$')
 txsd = re.compile(r'^(SN|SR|BF|DM|KM|SC)\d{4}$')
@@ -36,12 +36,12 @@ for wp in gpx.waypoints:
 
     if tasd.match(wp.name):
         color = "blue"
-        color = "gray"
+        color = "grey"
     elif txsd.match(wp.name):
         color = "orange"
-        color = "gray"
+        color = "grey"
     else:
-        continue  # skip others
+        color = 'orange'  # skip others
 
     folium.Circle(
         location=[wp.latitude, wp.longitude],
@@ -49,7 +49,7 @@ for wp in gpx.waypoints:
         color=color,
         fill=True,
         fill_color=color,
-        fill_opacity=0.6,
+        fill_opacity=0.7,
         popup=wp.name
     ).add_to(map)
 
