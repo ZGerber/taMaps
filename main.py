@@ -48,11 +48,11 @@ ssid_colors = {
     "TAX4SDAPSR": "green",
     "TAX4SDAPSN": "green",
     "TAX4SDAPBR": "green",
-    "MCSOStarlink": "orange",
+    "MCSOStarlink": "red",
     "Hotspot65BA": "purple",
     "HotspotGn2f": "pink",
     "PROJ871290": "brown",
-    "conectelabtem": "red",
+    "conectelabtem": "orange",
     "": "gray"  # hidden networks
 }
 
@@ -68,7 +68,7 @@ for entry in wifi_data:
         _, lat, lon = get_closest_gpx_point(scan_time)
     except Exception as e:
         unmatched += 1
-        print(f"⚠️  Match failed: {entry['timestamp']} -> {e}")
+        print(f"Match failed: {entry['timestamp']} -> {e}")
         lat, lon = default_lat, default_lon
 
     records.append({
@@ -77,7 +77,8 @@ for entry in wifi_data:
         "distance": entry.get("estimated_distance_m", 0),
         "signal_strength": entry.get("signal", 0),
         "name": entry.get("ssid", ""),
-        "color": ssid_colors.get(entry.get("ssid", ""), "gray")
+        "color": ssid_colors.get(entry.get("ssid", ""), "gray"),
+        "channel": entry.get("channel", 0),
     })
 
 print(f"Matched {len(records) - unmatched} WiFi scans to GPS waypoints. {unmatched} unmatched.")
@@ -92,19 +93,18 @@ folium.TileLayer(
     tiles="https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png",
     attr="Map data: &copy; <a href='https://opentopomap.org'>OpenTopoMap</a> contributors",
     name="OpenTopoMap",
-    max_zoom=17
-).add_to(map)
+    max_zoom=17).add_to(map)
 
 # Add WiFi signal circles
 for _, row in df.iterrows():
     folium.Circle(
         location=(row['lat'], row['lon']),
-        radius=max(40, ((row['signal_strength'] + 100) * 20)),
+        radius=max(50, ((row['signal_strength'] + 100) * 40)),
         color=row['color'],
         fill=True,
         fill_color=row['color'],
         fill_opacity=0.3,
-        popup=f"SSID: {row['name']}\nSignal: {row['signal_strength']} dB\nDist: {row['distance']} m"
+        popup=f"SSID: {row['name']}\nSignal: {row['signal_strength']} dB\nChannel: {row['channel']}"
     ).add_to(map)
 
 # Add tower markers
