@@ -7,11 +7,11 @@ from dateutil import parser
 from datetime import datetime, timedelta
 
 # Load TA site GPX (for towers + markers)
-with open("/home/zane/Documents/GPX/TA_AllSites_20221114.gpx", "r") as f:
+with open("/home/zane/software/wifiMap/src/utils/TA_AllSites_20221114.gpx", "r") as f:
     gpx = gpxpy.parse(f)
 
 # Load GPS waypoints with timestamps for WiFi matching
-with open("/home/zane/software/wifiMap/src/Current_location.gpx", "r") as f:
+with open("/home/zane/software/wifiMap/src/utils/Current_location.gpx", "r") as f:
     gpx_wifi = gpxpy.parse(f)
 
 # Extract waypoints with timestamps
@@ -38,8 +38,23 @@ towers = {
     "BRCT": [39.224425, -112.757766],
 }
 
+old_data = {
+    'lat': [39.3530625, 39.39769, 39.405834, 39.437054, 39.429455, 39.419931, 39.406678, 39.406678,
+            39.395621, 39.387368, 39.379681, 39.306629, 39.365581, 39.292074],
+    'lon': [-112.7424375, -112.783797, -112.798416, -112.813919, -112.791071, -112.783867, -112.814408, -112.814408,
+            -112.8767, -112.896441, -112.904940, -112.905895, -112.905017, -112.773461],
+    'distance': [551, 492, 309, 87, 138, 309, 491, 309, 155, 310, 438, 310, 390, 110],  # Distance in meters88
+    'signal_strength': [-95, -95, -79, -84, -79, -79, -95, -90, -84, -82, -93, -90, -92, -81],
+    'name': ['TALESDAP', 'TALESDAP', 'TAX4SDAPSN', 'TAX4SDAPSN', 'TAX4SDAPSN', 'TAX4SDAPSN', 'TAX4SDAPSN', 'TAX4SDAPSN', 'TALESDAP', 'TALESDAP',
+             'TALESDAP', 'TALESDAP', 'TALESDAP', 'conectelabtem'],
+    'color': ['blue', 'blue', 'green', 'green', 'green', 'green', 'green', 'green',
+              'blue', 'blue', 'blue', 'blue', 'blue', 'orange'],
+}
+
+old_df = pd.DataFrame(old_data)
+
 # Load WiFi scan data
-with open("wifi_scan_log.json") as f:
+with open("/home/zane/software/wifiMap/src/results/wifi_scan_log.json") as f:
     wifi_data = json.load(f)
 
 # Color scheme by SSID
@@ -83,11 +98,8 @@ for entry in wifi_data:
 
 print(f"Matched {len(records) - unmatched} WiFi scans to GPS waypoints. {unmatched} unmatched.")
 
-# Create DataFrame
 df = pd.DataFrame(records)
 
-# Create Folium map
-# map = folium.Map(location=telescope_array_coords, zoom_start=12, tiles="OpenTopoMap")
 map = folium.Map(location=telescope_array_coords, zoom_start=11, tiles=None)
 folium.TileLayer(
     tiles="https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png",
@@ -107,6 +119,17 @@ for _, row in df.iterrows():
         popup=f"SSID: {row['name']}\nSignal: {row['signal_strength']} dB\nChannel: {row['channel']}"
     ).add_to(map)
 
+for _, row in old_df.iterrows():
+    folium.Circle(
+        location=(row['lat'], row['lon']),
+        radius=max(50, ((row['signal_strength'] + 100) * 40)),
+        color=row['color'],
+        fill=True,
+        fill_color=row['color'],
+        fill_opacity=0.3,
+        popup=f"Signal: {row['signal_strength']} dB\nName: {row['name']}\n [Prelim. Cell Phone Measurement]"
+    ).add_to(map)
+
 # Add tower markers
 for name, coords in towers.items():
     folium.Marker(
@@ -118,6 +141,8 @@ for name, coords in towers.items():
 # Add TA SD markers from GPX waypoints
 tasd = re.compile(r'^(SK|BR|LR)\d{4}$')
 for wp in gpx.waypoints:
+    if wp.name == "MDFD":
+        print(wp.latitude, wp.longitude)
     if wp.name and tasd.match(wp.name):
         folium.Circle(
             location=(wp.latitude, wp.longitude),
@@ -126,8 +151,6 @@ for wp in gpx.waypoints:
             fill=True,
             fill_color="gray",
             fill_opacity=0.6,
-            popup=wp.name
-        ).add_to(map)
+            popup=wp.name).add_to(map)
 
-# Save interactive HTML
-map.save("wifi_locations_map.html")
+map.save("/home/zane/software/wifiMap/src/results/wifi_locations_map.html")
